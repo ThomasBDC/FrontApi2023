@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="allentries">
+        Chargement...
+    </div>
+
+    <script>
+
+    //J'envoie ma requête HTTP
+    //                   URL                       METhod  + (HEADERS)
+    fetch("https://api.publicapis.org/entries", {method: 'GET'})
+        .then(async (responseHTTP) =>
+        {
+            //Quand j'ai reçu la reponse, 
+            //Je transorme ma reponse texte en json
+            let resultJSON = await responseHTTP.json();
+            
+            //J'utilise le json
+            let entriesDiv = document.getElementById("allentries");
+            entriesDiv.innerHTML = resultJSON.count+ '<bR/>'+ '<bR/>';
+
+            resultJSON.entries.forEach(element => {
+                entriesDiv.innerHTML += element.Link + '<bR/>';
+            });
+        });
+
+    
+    </script>
+</body>
+</html>
