@@ -6,7 +6,7 @@ Application de gestion de replays (CRUD de liens vers des replays STUDI)
 -> Gestion des liens
 
 ## Techno ##
-Vanilla JS -> QUe du JS sans librairie ni framework
+Vanilla JS -> Que du JS sans librairie ni framework
 SASS
 
 ## SYSTEME DE ROUTING ##
