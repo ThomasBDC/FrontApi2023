@@ -8,11 +8,13 @@ const route = (event) => {
 const routes = {
     404: "/pages/404.html",
     "/": "/pages/home.html",
-    "/testApi": "/pages/testApi.html"
+    "/testApi": "/pages/testApi.html",
+    "/replays": "/pages/replays.html"
 };
 
 const routesJS = {
-    "/testApi": "js/testApi.js"
+    "/testApi": "js/testApi.js",
+    "/replays": "js/replays.js"
 };
 
 const handleLocation = async () => {

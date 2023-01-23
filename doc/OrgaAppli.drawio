@@ -1,1 +1,67 @@
-<mxfile host="Electron" modified="2023-01-16T10:01:25.505Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/14.1.8 Chrome/87.0.4280.88 Electron/11.1.1 Safari/537.36" etag="51ZXfoTb6stIpiT94-Lb" version="14.1.8" type="device"><diagram id="khpBU8QEBwp5g9HlSJ94" name="Page-1">3VjLcqM4FP0aqroXcfEwYC/xI9OpSseeZGZ6ZilAGHUEcoSI7Xx9X4EIYLAriZ121Wxs6ehKoHPuQ0Kzpsn2D47W8XcWYqqZerjVrJlmmuORAb8S2JWA7Q5LYMVJWEJGDTyQF6xAXaE5CXHWMhSMUUHWbTBgaYoD0cIQ52zTNosYbT91jVa4AzwEiHbRHyQUsUINZ1wPfMNkFatHj0y3HEhQZax2ksUoZJsGZM01a8oZE2Ur2U4xldxVvJTzrg+Mvr4Yx6l4y4Rvfy+CP5feDV3M3BfT9K78u6crW72b2FUbxiHsX3UZFzFbsRTReY1OOMvTEMtVdejVNreMrQE0APyJhdgpMVEuGECxSKgajQilU0YZL55oRVFkBgHgmeDsETdGQsd3bAdGyreUr3Zw8wrKWM4DfGTHlRMhvsLiiJ31KhG4NmYJFnwH8zimSJDn9nsg5WSrVzs11eMc7RoGa0ZSkTVWXkoADFS42JZyFhUtw31N32cPjfINql5jKzVU+Mk7fEZt+hnRXNGwpHlGcM4zFRDyHz3jAP7AYyAWtKmleV4i2zFGIeaaOZWCij6LCEJCWjgU9Jn4srWSLS8XMchNIhKABCwF02KWLtNE0Rrzvnn3+CkvlxdyefQTbZtTI0S4xLOcyzwSo6ccV4nB1L9o5uTqa3fRLlKGh6kPBoNOUG1iIvDDGhWeuYFE2Q4IlK3L3BWRrQysD0fIM+YCb4/HSNenqwnDtjNZuupv6sRnOgqLGznvFeyLg4Yvvt/VzI6rXd8v7v7q8AubFm1K20ylLMV7tCoIUbJKoRsASeA81kRSCA5GPTWQkDAs0l6fhu1UeAYNzD0NTLerwbBPgs9SwLlEgQCy+O5f2RnoulsB/8kFB87IqYDZVj2i7O2avSXmBBiQkhbgXkRhI7Sx2xdRY8e10JlrjvXGmnPANz655rh2u4a4o99QQ/SL+pU+sJteZXzEo3AaevKACV2fsuCxhK4JrZ52AQcan+hAJ6UKo3swmEO5FrturbzmKMEbxh8BQInMpKmfrXvL6pfF/fevvc5yi3y4a7QL6ZuzOccZeUF+sZ5UU0UJLG5PNHt2LJurq4aaXB/wm8IecfqDuV8f6PbIasViJfz7MkAd4pUJi6JMHrb2FD5DIFsdzc99+Hlzqj6p8Lr2XuEdX/zwM+xQ6y1v5JF0goLH3iPp//VUNNoXx7nwqcjtSPOPd3dze+t1NIBb/1o2QxbkSbHdXsoaGvkle7f+qdflkyi3nDbltt2l3DB7OB99Fuejbjg8LAd3c7gN6NPF/Rz+fswnRYh8uga/JyeN9zUYXlqDcUeDyWx2kO9gRwnQyK0PEO5DjlsViWSRC1gGVxmsPNsZ9pnuvHpVsBTHRvXBssFxX9r/AMXQrb/2lfW3/mRqzX8B</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="khpBU8QEBwp5g9HlSJ94" name="Page-1">
+        <mxGraphModel dx="926" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" source="HUOcQPAIlOD7z22A-bNq-1" target="HUOcQPAIlOD7z22A-bNq-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="420"/>
+                            <mxPoint x="530" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Requete HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HUOcQPAIlOD7z22A-bNq-5">
+                    <mxGeometry x="-0.2421" relative="1" as="geometry">
+                        <mxPoint x="51" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-1" value="Plusieurs pages avec le même header, et le même footer&lt;br&gt;Authentification à gérer&lt;br&gt;Requête ajax à faire sur chaque page (+-)&lt;br&gt;&lt;br&gt;Style ..." style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="300" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-2" value="FRONT (vscode)&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="270" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.007;entryY=0.686;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" source="HUOcQPAIlOD7z22A-bNq-3" target="HUOcQPAIlOD7z22A-bNq-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="575" y="478"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Reponse HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HUOcQPAIlOD7z22A-bNq-6">
+                    <mxGeometry x="0.1911" y="-3" relative="1" as="geometry">
+                        <mxPoint x="41" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=1;" parent="1" source="HUOcQPAIlOD7z22A-bNq-3" target="HUOcQPAIlOD7z22A-bNq-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-11" value="Entity&lt;br&gt;Framework&amp;nbsp;&lt;br&gt;(ORM)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HUOcQPAIlOD7z22A-bNq-10" vertex="1" connectable="0">
+                    <mxGeometry x="0.0583" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="290" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-4" value="API (Back)&lt;br&gt;(Visual studio 2022)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="260" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-7" value="VANILLA" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="550" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-8" value="ASP.NET CORE WEBAPI" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="540" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="HUOcQPAIlOD7z22A-bNq-9" value="BDD" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="1022" y="181" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="CORS policy&lt;br&gt;AllowAnyone" style="image;html=1;image=img/lib/clip_art/people/Security_Man_128x128.png" vertex="1" parent="1">
+                    <mxGeometry x="720" y="390" width="80" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -68,3 +68,17 @@ header {
     }
 }
 
+.replay-list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.linkReplay{
+    background-color: white;
+    padding:15px;
+    border-radius: 15px;
+    .linkReplayContent{
+        display: flex;
+        flex-direction: column;
+    }
+}
