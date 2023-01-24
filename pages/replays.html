@@ -1,5 +1,5 @@
 <h1>Liste des replays</h1>
-
+<button class="open-modal" data-cible="#modal-create-replay">Créer un Replay</button>
 <!--  
 Afficher tous les replays
 dans un div
@@ -7,4 +7,35 @@ dans un div
 
 <div class="replay-list" id="allReplays">
 
+</div>
+
+<div class="background-modal hide" id="modal-create-replay">
+    <div class="modal" >
+        <div class="modal-header">
+            <h2>Créer un replay</h2>
+        </div>
+        <div class="modal-content">
+            <form id="create-replay-form">
+                <div class="label-input">
+                    <label>Titre</label>
+                    <input name="title" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Description</label>
+                    <input name="description" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Date de création</label>
+                    <input name="dateSortie" type="date"/>
+                </div>
+                <div class="label-input">
+                    <label>Url</label>
+                    <input name="url" type="text"/>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="valid-form" data-cible="#create-replay-form">Créer</button>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="khpBU8QEBwp5g9HlSJ94" name="Page-1">
-        <mxGraphModel dx="926" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="999" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -12,7 +12,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="Requete HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HUOcQPAIlOD7z22A-bNq-5">
+                <mxCell id="4" value="Requete HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HUOcQPAIlOD7z22A-bNq-5" vertex="1" connectable="0">
                     <mxGeometry x="-0.2421" relative="1" as="geometry">
                         <mxPoint x="51" as="offset"/>
                     </mxGeometry>
@@ -30,7 +30,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="Reponse HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HUOcQPAIlOD7z22A-bNq-6">
+                <mxCell id="5" value="Reponse HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HUOcQPAIlOD7z22A-bNq-6" vertex="1" connectable="0">
                     <mxGeometry x="0.1911" y="-3" relative="1" as="geometry">
                         <mxPoint x="41" as="offset"/>
                     </mxGeometry>
@@ -58,8 +58,11 @@
                 <mxCell id="HUOcQPAIlOD7z22A-bNq-9" value="BDD" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="1022" y="181" width="60" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="CORS policy&lt;br&gt;AllowAnyone" style="image;html=1;image=img/lib/clip_art/people/Security_Man_128x128.png" vertex="1" parent="1">
+                <mxCell id="3" value="CORS policy&lt;br&gt;AllowAnyone" style="image;html=1;image=img/lib/clip_art/people/Security_Man_128x128.png" parent="1" vertex="1">
                     <mxGeometry x="720" y="390" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="FETCH" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-30;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="403" width="40" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
