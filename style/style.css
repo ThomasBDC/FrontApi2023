@@ -76,6 +76,11 @@ header .burger {
   width: 30%;
   margin-top: 15px;
 }
+.linkReplay .link-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .linkReplay .linkReplayContent {
   display: flex;
   flex-direction: column;

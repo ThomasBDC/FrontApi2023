@@ -15,7 +15,12 @@ function getAllReplays(){
         result.forEach(element => {
             let replayHtml = `
                                 <div class="linkReplay">
-                                    <h2>${element.title}</h2>
+                                    <div class="link-header">
+                                        <h2>${element.title}</h2>
+                                        <div>
+                                            <button class="delete-replay" data-id="${element.id}">Supprimer</button>
+                                        </div>
+                                    </div>
                                     <div class="linkReplayContent">
                                         <p>${element.description}</p>
                                         <p>${element.dateSortie}</p>
@@ -25,6 +30,14 @@ function getAllReplays(){
                             `;
             myDiv.innerHTML += replayHtml;
         });
+        document.querySelectorAll(".delete-replay").forEach(buttonDelete => {
+            buttonDelete.addEventListener("click", (e)=> {
+                if(confirm("Voulez-vous supprimer cet élément ?")){
+                    let id = buttonDelete.dataset.id;
+                    DeleteReplay(id);
+                }
+            });
+        })
         toggleLoader();
     })
     .catch(error => {
@@ -91,3 +104,23 @@ document.querySelectorAll(".valid-form").forEach(element => {
             });
         })
 });
+
+
+function DeleteReplay(idReplay){
+    const requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+      };
+    toggleLoader();
+    fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions)
+    .then(response => response.text())
+    .then(result => {
+        toggleLoader();
+        getAllReplays();//Cette méthode refresh la liste de replay
+    })
+    .catch(error => {
+        toggleLoader();
+        alert("Une erreur est survenue");
+        console.log('error', error)
+    });
+}

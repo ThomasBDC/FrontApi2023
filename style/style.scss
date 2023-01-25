@@ -79,7 +79,12 @@ header {
     padding:15px;
     border-radius: 15px;
     width: 30%;
-    margin-top: 15px;;
+    margin-top: 15px;
+    .link-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     .linkReplayContent{
         display: flex;
         flex-direction: column;
