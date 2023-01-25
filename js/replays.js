@@ -6,7 +6,7 @@ function getAllReplays(){
         method: 'GET',
         redirect: 'follow'
       };
-      
+    toggleLoader();
     fetch("https://localhost:7027/api/Replays", requestOptions)
     .then(response => response.json())
     .then(result => {
@@ -25,8 +25,10 @@ function getAllReplays(){
                             `;
             myDiv.innerHTML += replayHtml;
         });
+        toggleLoader();
     })
     .catch(error => {
+        toggleLoader();
         console.log('error', error);
         alert("Impossible de joindre l'API.");
     });
@@ -73,15 +75,17 @@ document.querySelectorAll(".valid-form").forEach(element => {
             body: valueJSON,
             redirect: 'follow'
         };
-
+        toggleLoader();
         fetch("https://localhost:7027/api/Replays", requestOptions)
             .then(response => response.text())
             .then(result => 
                 {
+                    toggleLoader();
                     getAllReplays();
                     document.querySelector(".background-modal").classList.toggle("hide");
                 })
             .catch(error => {
+                toggleLoader();
                 console.log('error', error);
                 alert("Création impossible");
             });

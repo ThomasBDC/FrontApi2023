@@ -109,4 +109,56 @@ header .burger {
 
 .label-input * {
   display: block;
+}
+
+#Loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8509803922);
+  display: flex;
+}
+#Loader.hide {
+  display: none;
+}
+#Loader .loader-modal {
+  margin: auto;
+  padding: 50px;
+  background: white;
+  border-radius: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+#Loader .loader-modal .spinner {
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
+  display: inline-block;
+  transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -14,3 +14,6 @@ burger.addEventListener('click', function() {
     toggleNav();
 });
 
+function toggleLoader(){
+    document.getElementById("Loader").classList.toggle("hide");
+}
