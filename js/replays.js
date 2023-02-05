@@ -18,6 +18,7 @@ function getAllReplays(){
                                     <div class="link-header">
                                         <h2>${element.title}</h2>
                                         <div>
+                                            <button class="edit-replay" data-id="${element.id}">Modifier</button>
                                             <button class="delete-replay" data-id="${element.id}">Supprimer</button>
                                         </div>
                                     </div>
@@ -37,7 +38,31 @@ function getAllReplays(){
                     DeleteReplay(id);
                 }
             });
-        })
+        });
+        document.querySelectorAll(".edit-replay").forEach(buttonEdit => {
+            buttonEdit.addEventListener("click", (e) =>{
+                let id = buttonEdit.dataset.id;
+
+                //Récupérer les informations du replay via son id
+                getReplay(id).then(replay =>{
+                    console.log(replay);
+                    //Ouvrir une modal de modification
+                    let modalEdit = document.getElementById("modal-edit-replay");
+                    modalEdit.classList.remove("hide");
+
+                    //Remplir cette modal avec les informations du replay
+                    let formEdit = modalEdit.querySelector("#edit-replay-form");
+                    formEdit.elements['id'].value = replay.id;
+                    formEdit.elements['title'].value = replay.title;
+                    formEdit.elements['description'].value = replay.description;
+                    formEdit.elements['dateSortie'].value = new Date(replay.dateSortie).toISOString().split('T')[0];
+                    formEdit.elements['url'].value = replay.url;
+
+                    //Au click envoyer un PUT vers l'API
+                });
+
+            });
+        });
         toggleLoader();
     })
     .catch(error => {
@@ -124,4 +149,15 @@ function DeleteReplay(idReplay){
         alert("Une erreur est survenue");
         console.log('error', error)
     });
+}
+
+async function getReplay(idReplay){
+    //Récupérer UN replay en fonction de son id
+    const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+    let response = await fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions);
+    let result = await response.json();
+    return result;
 }

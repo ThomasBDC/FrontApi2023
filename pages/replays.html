@@ -39,3 +39,35 @@ dans un div
         </div>
     </div>
 </div>
+
+<div class="background-modal hide" id="modal-edit-replay">
+    <div class="modal" >
+        <div class="modal-header">
+            <h2>Modifier un replay</h2>
+        </div>
+        <div class="modal-content">
+            <form id="edit-replay-form">
+                <input name="id" type="hidden"/>
+                <div class="label-input">
+                    <label>Titre</label>
+                    <input name="title" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Description</label>
+                    <input name="description" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Date de création</label>
+                    <input name="dateSortie" type="date"/>
+                </div>
+                <div class="label-input">
+                    <label>Url</label>
+                    <input name="url" type="text"/>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="valid-form" data-cible="#edit-replay-form">Modifier</button>
+        </div>
+    </div>
+</div>
