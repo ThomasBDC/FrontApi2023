@@ -96,6 +96,7 @@ document.querySelectorAll(".valid-form").forEach(element => {
                     toggleLoader();
                     getAllReplays();
                     document.querySelector(".background-modal").classList.toggle("hide");
+                    form.reset();
                 })
             .catch(error => {
                 toggleLoader();
