@@ -1,13 +1,68 @@
+//Code qui s'exécute en ouvrant la page
+const urlApi = "https://localhost:7027/api";
+const ctrlReplay = "Replays";
+const urlReplay = urlApi + "/" + ctrlReplay;
 getAllReplays();
 
+//Gestion de la fermeture des modal
+document.querySelectorAll(".background-modal").forEach(element => {
+    element.addEventListener("click", (e) =>{
+        e.currentTarget.classList.toggle("hide");
+    })
+});
 
+//Gestion du click sur la modal (ne pas fermer)
+document.querySelectorAll(".modal").forEach(element => {
+    element.addEventListener("click", (e) =>{
+        e.stopPropagation();
+    })
+});
+
+//Gestion de l'ouverture d'une modal
+document.querySelectorAll(".open-modal").forEach(element => {
+    element.addEventListener("click", (e) =>{
+        let cible = e.currentTarget.dataset.cible;
+        document.querySelector(cible).classList.toggle("hide");
+    })
+});
+
+//Valider le formulaire de création
+document.querySelectorAll(".valid-form-create").forEach(element => {
+    element.addEventListener("click", (e) =>{
+        let cible = e.currentTarget.dataset.cible;
+        let form = document.querySelector(cible);
+        let data = new FormData(form);
+        let value = Object.fromEntries(data.entries());
+        let valueJSON = JSON.stringify(value);
+
+        createReplay(valueJSON, form);
+        });
+});
+
+//Valider le formulaire de modification
+document.querySelectorAll(".valid-form-edit").forEach(element => {
+    element.addEventListener("click", (e) => {
+        //Récupérer les données du formulaire
+        let cible = e.currentTarget.dataset.cible;
+        let form = document.querySelector(cible);
+        let data = new FormData(form);
+        let value = Object.fromEntries(data.entries());
+        let valueJSON = JSON.stringify(value);
+        //Faire l'appel AJAX (PUT)
+        EditReplay(value.id, valueJSON);
+
+    });
+});
+
+//Méthodes
+//Récupérer et afficher tous les replaus
 function getAllReplays(){
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
     toggleLoader();
-    fetch("https://localhost:7027/api/Replays", requestOptions)
+    fetch(urlReplay, requestOptions)
     .then(response => response.json())
     .then(result => {
         let myDiv = document.getElementById("allReplays");
@@ -72,37 +127,8 @@ function getAllReplays(){
     });
 }
 
-
-
-
-document.querySelectorAll(".background-modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        e.currentTarget.classList.toggle("hide");
-    })
-});
-
-document.querySelectorAll(".modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        e.stopPropagation();
-    })
-});
-
-document.querySelectorAll(".open-modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        let cible = e.currentTarget.dataset.cible;
-        document.querySelector(cible).classList.toggle("hide");
-    })
-});
-
-document.querySelectorAll(".valid-form-create").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        let cible = e.currentTarget.dataset.cible;
-        let form = document.querySelector(cible);
-        let data = new FormData(form);
-        let value = Object.fromEntries(data.entries());
-        let valueJSON = JSON.stringify(value);
-        console.log(JSON.stringify(value));
-
+//Appel AJAX pour créer un replay
+function createReplay(dataJSON, form){
         //faire le fetch pour envoyer le POST
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -110,11 +136,11 @@ document.querySelectorAll(".valid-form-create").forEach(element => {
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
-            body: valueJSON,
+            body: dataJSON,
             redirect: 'follow'
         };
         toggleLoader();
-        fetch("https://localhost:7027/api/Replays", requestOptions)
+        fetch(urlReplay, requestOptions)
             .then(response => response.text())
             .then(result => 
                 {
@@ -130,24 +156,9 @@ document.querySelectorAll(".valid-form-create").forEach(element => {
                 console.log('error', error);
                 alert("Création impossible");
             });
-        });
-});
+}
 
-document.querySelectorAll(".valid-form-edit").forEach(element => {
-    element.addEventListener("click", (e) => {
-        //Récupérer les données du formulaire
-        let cible = e.currentTarget.dataset.cible;
-        let form = document.querySelector(cible);
-        let data = new FormData(form);
-        let value = Object.fromEntries(data.entries());
-        let valueJSON = JSON.stringify(value);
-        //Faire l'appel AJAX (PUT)
-        EditReplay(value.id, valueJSON);
-
-    });
-});
-
-//Fera un appel AJAX
+//Appel AJAX pour modifier un replay
 function EditReplay(idReplay, dataJSON){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -159,7 +170,7 @@ function EditReplay(idReplay, dataJSON){
         redirect: 'follow'
     };
     toggleLoader();
-    fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions)
+    fetch(urlReplay+"/"+idReplay, requestOptions)
         .then(response => response.text())
         .then(result => 
             {
@@ -180,13 +191,14 @@ function EditReplay(idReplay, dataJSON){
     
 }
 
+//Appel AJAX pour supprimer un replay
 function DeleteReplay(idReplay){
     const requestOptions = {
         method: 'DELETE',
         redirect: 'follow'
       };
     toggleLoader();
-    fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions)
+    fetch(urlReplay+"/"+idReplay, requestOptions)
     .then(response => response.text())
     .then(result => {
         toggleLoader();
@@ -199,13 +211,14 @@ function DeleteReplay(idReplay){
     });
 }
 
+//Appel AJAX pour récupérer un replay précis
 async function getReplay(idReplay){
     //Récupérer UN replay en fonction de son id
     const requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
-    let response = await fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions);
+    let response = await fetch(urlReplay+"/"+idReplay, requestOptions);
     let result = await response.json();
     return result;
 }
