@@ -94,7 +94,7 @@ document.querySelectorAll(".open-modal").forEach(element => {
     })
 });
 
-document.querySelectorAll(".valid-form").forEach(element => {
+document.querySelectorAll(".valid-form-create").forEach(element => {
     element.addEventListener("click", (e) =>{
         let cible = e.currentTarget.dataset.cible;
         let form = document.querySelector(cible);
@@ -120,7 +120,9 @@ document.querySelectorAll(".valid-form").forEach(element => {
                 {
                     toggleLoader();
                     getAllReplays();
-                    document.querySelector(".background-modal").classList.toggle("hide");
+                    document.querySelectorAll(".background-modal").forEach(modal => {
+                        modal.classList.add("hide");
+                    });
                     form.reset();
                 })
             .catch(error => {
@@ -128,9 +130,55 @@ document.querySelectorAll(".valid-form").forEach(element => {
                 console.log('error', error);
                 alert("Création impossible");
             });
-        })
+        });
 });
 
+document.querySelectorAll(".valid-form-edit").forEach(element => {
+    element.addEventListener("click", (e) => {
+        //Récupérer les données du formulaire
+        let cible = e.currentTarget.dataset.cible;
+        let form = document.querySelector(cible);
+        let data = new FormData(form);
+        let value = Object.fromEntries(data.entries());
+        let valueJSON = JSON.stringify(value);
+        //Faire l'appel AJAX (PUT)
+        EditReplay(value.id, valueJSON);
+
+    });
+});
+
+//Fera un appel AJAX
+function EditReplay(idReplay, dataJSON){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+        body: dataJSON,
+        redirect: 'follow'
+    };
+    toggleLoader();
+    fetch("https://localhost:7027/api/Replays/"+idReplay, requestOptions)
+        .then(response => response.text())
+        .then(result => 
+            {
+                //Je ferme le loader
+                toggleLoader();
+                //Je refresh la liste des replays
+                getAllReplays();
+                //JE ferme ma modal
+                document.querySelectorAll(".background-modal").forEach(modal => {
+                    modal.classList.add("hide");
+                })
+            })
+        .catch(error => {
+            toggleLoader();
+            console.log('error', error);
+            alert("Modification impossible");
+        });
+    
+}
 
 function DeleteReplay(idReplay){
     const requestOptions = {
