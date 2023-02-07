@@ -1,0 +1,57 @@
+<h1>Liste des categories</h1>
+<button class="open-modal" data-cible="#modal-create-categorie">Créer un categorie</button>
+<!--  
+Afficher tous les categories
+dans un div
+-->
+
+<div class="categorie-list" id="allcategories">
+
+</div>
+
+<div class="background-modal hide" id="modal-create-categorie">
+    <div class="modal" >
+        <div class="modal-header">
+            <h2>Créer un categorie</h2>
+        </div>
+        <div class="modal-content">
+            <form id="create-categorie-form">
+                <div class="label-input">
+                    <label>Titre</label>
+                    <input name="title" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Description</label>
+                    <input name="description" type="text"/>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="valid-form-create" data-cible="#create-categorie-form">Créer</button>
+        </div>
+    </div>
+</div>
+
+<div class="background-modal hide" id="modal-edit-categorie">
+    <div class="modal" >
+        <div class="modal-header">
+            <h2>Modifier un categorie</h2>
+        </div>
+        <div class="modal-content">
+            <form id="edit-categorie-form">
+                <input name="id" type="hidden"/>
+                <div class="label-input">
+                    <label>Titre</label>
+                    <input name="title" type="text"/>
+                </div>
+                <div class="label-input">
+                    <label>Description</label>
+                    <input name="description" type="text"/>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="valid-form-edit" data-cible="#edit-categorie-form">Modifier</button>
+        </div>
+    </div>
+</div>

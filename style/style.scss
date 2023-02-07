@@ -91,6 +91,19 @@ header {
     }
 }
 
+.categorie-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    .linkcategorie{
+        border: solid 1px black;
+        padding:15px;
+        border-radius: 15px;
+        background-color: white;
+    }
+}
+
 .background-modal{
     position: fixed;
     width:100%;

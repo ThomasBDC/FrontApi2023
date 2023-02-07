@@ -9,12 +9,14 @@ const routes = {
     404: "/pages/404.html",
     "/": "/pages/home.html",
     "/testApi": "/pages/testApi.html",
-    "/replays": "/pages/replays.html"
+    "/replays": "/pages/replays.html",
+    "/categories": "/pages/categories.html"
 };
 
 const routesJS = {
     "/testApi": "js/testApi.js",
-    "/replays": "js/replays.js"
+    "/replays": "js/replays.js",
+    "/categories": "js/categories.js"
 };
 
 const handleLocation = async () => {
