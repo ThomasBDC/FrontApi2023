@@ -4,28 +4,6 @@ const ctrlcategorie = "categories";
 const urlcategorie = urlApi + "/" + ctrlcategorie;
 getAllcategories();
 
-//Gestion de la fermeture des modal
-document.querySelectorAll(".background-modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        e.currentTarget.classList.toggle("hide");
-    })
-});
-
-//Gestion du click sur la modal (ne pas fermer)
-document.querySelectorAll(".modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        e.stopPropagation();
-    })
-});
-
-//Gestion de l'ouverture d'une modal
-document.querySelectorAll(".open-modal").forEach(element => {
-    element.addEventListener("click", (e) =>{
-        let cible = e.currentTarget.dataset.cible;
-        document.querySelector(cible).classList.toggle("hide");
-    })
-});
-
 //Valider le formulaire de création
 document.querySelectorAll(".valid-form-create").forEach(element => {
     element.addEventListener("click", (e) =>{

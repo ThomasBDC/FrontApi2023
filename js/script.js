@@ -17,3 +17,4 @@ burger.addEventListener('click', function() {
 function toggleLoader(){
     document.getElementById("Loader").classList.toggle("hide");
 }
+

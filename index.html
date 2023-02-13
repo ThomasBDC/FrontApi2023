@@ -13,9 +13,9 @@
         <h1 class="logo">LOGO</h1>
         <ul class="nav">
             <li class="navlink"><a href="/">Home</a></li>
-            <li class="navlink"><a href="/testApi">Test Reqres.in</a></li>
             <li class="navlink"><a href="/replays">Les replays</a></li>
             <li class="navlink"><a href="/categories">Les catégories</a></li>
+            <li class="navlink"><button class="open-modal" data-cible="#modal-login">Se connecter</button></li>
         </ul>
         <div class="burger">
             <i class="fas fa-bars"></i>
@@ -38,7 +38,31 @@
                 |
             </span>
         </div>
-    </div>    
+    </div>   
+    
+    <div class="background-modal hide login" id="modal-login">
+        <div class="modal login" >
+            <div class="modal-header">
+                <h2>Se connecter</h2>
+            </div>
+            <div class="modal-content">
+                <form id="login-form">
+                    <div class="label-input">
+                        <label>Username</label>
+                        <input name="username" type="text"/>
+                    </div>
+                    <div class="label-input">
+                        <label>Mot de pase</label>
+                        <input name="password" type="password"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="valid-form-login" data-cible="#login-form">Connexion</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="js/router.js"></script>
     <script src="js/script.js"></script>
 </body>
