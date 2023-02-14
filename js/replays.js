@@ -36,9 +36,13 @@ document.querySelectorAll(".valid-form-edit").forEach(element => {
 //Méthodes
 //Récupérer et afficher tous les replaus
 function getAllReplays(){
+    var myHeaders = new Headers();
+    const token = getToken();
+    myHeaders.append("Authorization", "Bearer "+token);    
     var requestOptions = {
         method: 'GET',
-        redirect: 'follow'
+        redirect: 'follow',
+        headers: myHeaders
       };
     toggleLoader();
     fetch(urlReplay, requestOptions)
@@ -111,7 +115,7 @@ function createReplay(dataJSON, form){
         //faire le fetch pour envoyer le POST
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
+        myHeaders.append("Authorization", "Bearer "+getToken());    
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
@@ -141,6 +145,7 @@ function createReplay(dataJSON, form){
 function EditReplay(idReplay, dataJSON){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", "Bearer "+getToken());    
 
     var requestOptions = {
         method: 'PUT',
@@ -172,9 +177,13 @@ function EditReplay(idReplay, dataJSON){
 
 //Appel AJAX pour supprimer un replay
 function DeleteReplay(idReplay){
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+getToken());    
+
     const requestOptions = {
         method: 'DELETE',
-        redirect: 'follow'
+        redirect: 'follow',
+        headers: myHeaders
       };
     toggleLoader();
     fetch(urlReplay+"/"+idReplay, requestOptions)
@@ -193,9 +202,12 @@ function DeleteReplay(idReplay){
 //Appel AJAX pour récupérer un replay précis
 async function getReplay(idReplay){
     //Récupérer UN replay en fonction de son id
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+getToken());
     const requestOptions = {
         method: 'GET',
-        redirect: 'follow'
+        redirect: 'follow',
+        headers: myHeaders
       };
     let response = await fetch(urlReplay+"/"+idReplay, requestOptions);
     let result = await response.json();

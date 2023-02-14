@@ -153,22 +153,9 @@ header .burger {
   text-align: center;
 }
 #Loader .loader-modal .spinner {
-  -webkit-animation: spin 1s infinite;
-          animation: spin 1s infinite;
+  animation: spin 1s infinite;
   display: inline-block;
   transform-origin: 50% 50%;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 @keyframes spin {
@@ -181,4 +168,7 @@ header .burger {
   100% {
     transform: rotate(0deg);
   }
+}
+.hide {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -57,6 +57,8 @@ const handleLocation = async () => {
             document.querySelector(cible).classList.toggle("hide");
         })
     });
+
+    showAndHideElementsOnConnexion();
 };
 
 window.onpopstate = handleLocation;

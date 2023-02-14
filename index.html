@@ -13,9 +13,13 @@
         <h1 class="logo">LOGO</h1>
         <ul class="nav">
             <li class="navlink"><a href="/">Home</a></li>
-            <li class="navlink"><a href="/replays">Les replays</a></li>
+            <li class="navlink show-connected"><a href="/replays">Les replays</a></li>
             <li class="navlink"><a href="/categories">Les catégories</a></li>
-            <li class="navlink"><button class="open-modal" data-cible="#modal-login">Se connecter</button></li>
+            <li class="navlink">
+                <button class="open-modal show-disconnected" data-cible="#modal-login">Se connecter</button>
+                <button class="show-connected" id="logout-btn" onclick="logout()" >Déconnexion</button>
+                <a class="show-connected" id="HelloLink"></a>
+            </li>
         </ul>
         <div class="burger">
             <i class="fas fa-bars"></i>
@@ -58,12 +62,12 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="valid-form-login" data-cible="#login-form">Connexion</button>
+                <button id="valid-form-login" data-cible="#login-form">Connexion</button>
             </div>
         </div>
     </div>
     
-    <script src="js/router.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html>
